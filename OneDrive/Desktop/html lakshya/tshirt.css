@@ -1,0 +1,85 @@
+/* General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    background-color: #4d222c;
+    color: rgb(163, 169, 33);
+    padding: 20px;
+    margin: 0;
+    font-size: 2em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Block */
+#block {
+    background-color: white;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+#block img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Product Title */
+#block h3 {
+    margin-top: 15px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+/* Description */
+#description {
+    color: #555;
+    font-size: 0.95em;
+    margin: 10px 0;
+}
+
+/* Price */
+#price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #1a73e8;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #155acb;
+    transform: scale(1.05);
+}
+
+/* Remove link underline & inherit color */
+button a {
+    text-decoration: none;
+    color: white;
+}
