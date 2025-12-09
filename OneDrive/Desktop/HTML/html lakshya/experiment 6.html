@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Card Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 5px;        
+      padding: 5px;       
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #cedc06;
+      color: #222;        
+      padding: 20px;      
+      margin: 0;          
+    }
+
+    .site-header {
+      display: block;
+      
+      background: #c42d03; 
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 12px;
+      border-radius: 6px;
+    }
+
+    
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    
+    .product-card {
+      background: #fff;
+      border: 1px solid #e0e4ef;
+      padding: 12px;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(20, 30, 60, 0.06);
+    }
+
+    
+    .product-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    
+    .product-title {
+      font-size: 18px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .product-desc {
+      font-size: 10px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    
+    .price-row {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .price {
+      font-weight: 700;
+      color: #0b6b3a;
+      display: inline;
+      font-size: 18px;
+    }
+    .old-price {
+      color: #888;
+      text-decoration: line-through;
+      display: inline;
+      font-size: 14px;
+    }
+
+    
+    .add-cart {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #3706a8;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    
+    @media (max-width: 420px) {
+      .product-image { height: 140px; }
+      .product-title { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ShopEasy</h1>
+  </header>
+
+  <main class="container">
+    <section class="product-card">
+      <img class="product-image" src="tshirt.jpg" alt="Product image">
+      <div class="product-title">Classic Cotton T-Shirt</div>
+      <div class="product-desc">Soft, breathable cotton. Regular fit. Available in multiple colors.</div>
+
+      <div class="price-row">
+        <div class="price">₹1,499</div>
+        <div class="old-price">₹2,199</div>
+      </div>
+
+      <button class="add-cart">Add to Cart</button>
+    </section>
+  </main>
+</body>
+</html>
