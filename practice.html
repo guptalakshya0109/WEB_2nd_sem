@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rilaksh ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ffd500,#c22328,#fad0c4);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.card {
+    margin:12px;
+    padding:15px;
+    border-radius:18px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.card-img {
+    width:100%;
+    max-width:700px;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+button {
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+    width:10%;
+}
+
+input {
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    width:85%;
+    max-width:250px;
+}
+
+h1 { font-size:22px; }
+h2 { font-size:18px; }
+h3 { font-size:16px; }
+
+#typing {
+    border-right:2px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    font-size:14px;
+}
+
+.chat { text-align:left; }
+
+.msg {
+    background:white;
+    color:black;
+    padding:8px;
+    border-radius:10px;
+    margin:5px;
+    width:fit-content;
+    max-width:80%;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.slide {
+    display:none;
+    width:200%;
+    max-width:300px;
+    border-radius:12px;
+}
+
+.heart {
+    position:fixed;
+    bottom:-10px;
+    animation: float 6s linear infinite;
+}
+@keyframes float {
+    to {transform: translateY(-100vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<h1>𝕙𝕒𝕡𝕡𝕪 𝕓𝕚𝕣𝕥𝕙𝕕𝕒𝕪 𝕞𝕪 𝕝𝕠𝕧𝕖 ❤️</h1>
+
+<!-- PASSWORD -->
+<div class="card">
+
+<img src="card.jpg" class="card-img">
+
+<h3>Enter Secret Code 🔐</h3>
+<input id="pass" placeholder="Enter password">
+<button onclick="checkPass()">Unlock</button>
+
+</div>
+
+<!-- MAIN -->
+<div id="main" style="display:none;">
+
+<div class="card">
+<h2>💌 My Love</h2>
+<p id="typing"></p>
+</div>
+
+<div class="card chat">
+<h3>Our Story 💬</h3>
+<div id="chatBox"></div>
+</div>
+
+<div class="card">
+<h3>Memories 📸</h3>
+<img class="slide" src="photo1.jpeg">
+<img class="slide" src="photo2.jpeg">
+<img class="slide" src="photo3.jpeg">
+<img class="slide" src="photo4.jpeg">
+<img class="slide" src="photo5.jpeg">
+</div>
+
+<div class="card">
+<h3>Love Quiz 🎮</h3>
+<div id="quizBox">
+<p id="question"></p>
+<div id="options"></div>
+<button onclick="nextQuestion()">Next ➡️</button>
+</div>
+</div>
+
+</div>
+
+<script>
+
+/* PASSWORD + MUSIC */
+function checkPass(){
+    if(document.getElementById("pass").value==="Rilaksh@0129"){
+        document.getElementById("main").style.display="block";
+        document.getElementById("bgMusic").play().catch(()=>{});
+    } else {
+        alert("Wrong password 😝");
+    }
+}
+
+/* Typing */
+let text="Rilaksh, you are my forever ❤️ I love you endlessly.";
+let i=0;
+function type(){
+    if(i<text.length){
+        document.getElementById("typing").innerHTML+=text[i];
+        i++;
+        setTimeout(type,40);
+    }
+}
+type();
+
+/* Chat */
+let msgs=["Hi ❤️","I miss you","You are my world 🌍","Forever yours 💖","I love you my gurl ❤️","Happy birthday Rilaksh ❤️🌍"];
+let j=0;
+function showChat(){
+    if(j<msgs.length){
+        let div=document.createElement("div");
+        div.className="msg";
+        div.innerText=msgs[j];
+        document.getElementById("chatBox").appendChild(div);
+        j++;
+        setTimeout(showChat,1000);
+    }
+}
+showChat();
+
+/* Slideshow */
+let slideIndex=0;
+function showSlides(){
+    let slides=document.getElementsByClassName("slide");
+    for(let i=0;i<slides.length;i++) slides[i].style.display="none";
+    slideIndex++;
+    if(slideIndex>slides.length) slideIndex=1;
+    slides[slideIndex-1].style.display="block";
+    setTimeout(showSlides,2500);
+}
+showSlides();
+
+/* QUIZ (FULL ORIGINAL) */
+const quizData = [
+{
+q: "How much do you love me? ❤️",
+options: ["10%", "40%", "70%", "Infinite times 💖"],
+answer: 3
+},
+{
+q: "Are you always with me? 🥺",
+options: ["Yes ❤️", "No", "None of the above"],
+answer: 0
+},
+{
+q: "Who is your favorite person? 😍",
+options: ["Me 😎", "Me again 😎", "Only me ❤️", "All of the above 💖"],
+answer: 3
+},
+{
+q: "What am I to you?",
+options: ["Friend", "Best Friend", "Love ❤️", "Everything 💞"],
+answer: 3
+},
+{
+q: "Will you stay forever with me?",
+options: ["Yes ❤️", "No", "Always 💖","Maybe"],
+answer: 2
+},
+{
+q: "How special am I?",
+options: ["Normal", "Most special ❤️","Little", "Very"],
+answer: 1
+},
+{
+q: "What do I mean to you?",
+options: ["Time pass", "Important", "Very important", "My world 🌍"],
+answer: 3
+},
+{
+q: "How often do you think about me?",
+options: ["Every second ❤️","Sometimes", "Daily", "Every hour"],
+answer: 0
+},
+{
+q: "Will you ever leave me?",
+options: ["Yes", "No ❤️", "Maybe", "Never ever 💖"],
+answer: 3
+},
+{
+q: "Our love is?",
+options: ["Temporary", "Forever ♾️❤️", "Strong","Beautiful"],
+answer: 1
+}
+];
+
+let currentQ=0, score=0, answered=false;
+
+function loadQuestion(){
+    answered=false;
+    let q=quizData[currentQ];
+    document.getElementById("question").innerText=q.q;
+
+    let html="";
+    q.options.forEach((opt,i)=>{
+        html+=`<div onclick="selectOption(${i},this)" class="msg">${opt}</div>`;
+    });
+    document.getElementById("options").innerHTML=html;
+}
+
+function selectOption(i,el){
+    if(answered)return;
+    answered=true;
+
+    if(i===quizData[currentQ].answer){
+        score++;
+        el.style.background="green";
+        el.style.color="white";
+    } else {
+        el.style.background="red";
+        el.style.color="white";
+    }
+}
+
+function nextQuestion(){
+    if(!answered){
+        alert("Please select an answer 😊");
+        return;
+    }
+
+    currentQ++;
+    if(currentQ<quizData.length){
+        loadQuestion();
+    } else {
+        document.getElementById("quizBox").innerHTML =
+        `<h2>You scored ${score}/10 ❤️</h2>
+         <p>${score>=7 ? "Aww 🥺 that's real love ❤️" : "Still I love you endlessly ❤️"}</p>`;
+    }
+}
+loadQuestion();
+
+/* Hearts */
+setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},400);
+
+</script>
+
+</body>
+</html>
