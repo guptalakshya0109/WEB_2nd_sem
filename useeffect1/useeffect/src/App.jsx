@@ -1,38 +1,61 @@
-// import react, { useState, useEffect } from 'react';
-// function App() {
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     password: ''
+const App = () => {
+  const [formdata, setformdata] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-//   });
-//   // useEffect
+  useEffect(() => {
+    console.log("form data update", formdata);
+  }, [formdata]);
 
-//   useEffect(() =>{
-//     console.log("Form data has been updated:", formData);
+  const handlechange = (e) => {
+    setformdata({
+      ...formdata,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-//   },[formData])
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Registration successful");
+    console.log(formdata);
+  };
 
-//   // input change
-// }
-import react,{useState,useEffect} from 'react'
-
-export const App = () => {
   return (
-    <div>
-      <form action="">
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" />
-        <br/>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" />
-        <br/>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" />
-        <br/>
-        <button type="submit">Submit</button>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+          value={formdata.name}
+          onChange={handlechange}
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          value={formdata.email}
+          onChange={handlechange}
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          value={formdata.password}
+          onChange={handlechange}
+        />
+
+        <button type="submit">Register</button>
       </form>
     </div>
-  )
-}
+  );
+};
+
+export default App;
