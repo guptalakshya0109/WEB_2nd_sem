@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon.jsx";
 
-/* ============================================
-   Data
-   ============================================ */
-
 const HERO_IMAGES = [
   {
     url: "https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1600",
